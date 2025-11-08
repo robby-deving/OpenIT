@@ -82,4 +82,7 @@ Masid: A Real-Time Earthquake Monitoring and Alert System is a disaster monitori
 1. Clone the repository:  
    ```bash
    git clone <repository-url>
-   cd masid
+   cd OpenIT
+
+   npm install
+   npm run dev
