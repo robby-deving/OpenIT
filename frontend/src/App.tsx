@@ -4,6 +4,7 @@ import Map from './pages/Map';
 import Alerts from './pages/Alerts';
 import SafetyGuides from './pages/SafetyGuides';
 import Dashboard from './pages/Dashboard';
+import EmergencyHotlines from './pages/EmergencyHotlines';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
           <Route path="map" element={<Map />}/>
           <Route path="alerts" element={<Alerts />}/>
           <Route path="safety-guides" element={<SafetyGuides />}/>
+          <Route path="emergency-hotlines" element={<EmergencyHotlines />}/>
       </Route>
     </Routes>
     </>
