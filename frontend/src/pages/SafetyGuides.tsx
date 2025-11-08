@@ -3,6 +3,7 @@ import checklist from "@/assets/material-symbols_checklist.svg";
 import landslide from "@/assets/material-symbols_landslide-outline.svg";
 import caution from "@/assets/icon-park-solid_caution.svg";
 import badge from "@/assets/badge.svg";
+import safety from "@/assets/safety.svg";
 import { Checkbox } from "@/components/ui/checkbox";
 
 interface ModalProps {
@@ -47,7 +48,7 @@ const ChecklistModal: React.FC<ModalProps> = ({ title, items, isOpen, onClose })
 
         {allChecked && (
           <div className="mt-4 flex justify-center">
-            <img src={badge} className="w-16 h-16" />
+            <img src={safety} className="w-56 h-16" />
           </div>
         )}
 
@@ -75,7 +76,7 @@ export default function SafetyGuides() {
   const handlePrepareClick = (section: string) => {
     switch (section) {
       case "before":
-        setModalTitle("Prepare Before an Emergency");
+        setModalTitle("Prepare Before an Earthquake");
         setModalItems([
           "Practice how to protect yourself during earthquakes, with family and coworkers.",
           "Make an Emergency Plan: Create a family emergency communications plan that has an out-of-state contact.",
@@ -84,7 +85,7 @@ export default function SafetyGuides() {
         break;
 
       case "during":
-        setModalTitle("Stay Safe During an Emergency");
+        setModalTitle("Stay Safe During an Earthquake");
         setModalItems([
           "If you are inside, stay and do not run outside and avoid doorways.",
           "If you are in bed, turn face down and cover your head and neck with a pillow.",
@@ -94,7 +95,7 @@ export default function SafetyGuides() {
         break;
 
       case "after":
-        setModalTitle("Stay Safe After an Emergency");
+        setModalTitle("Stay Safe After an Earthquake");
         setModalItems([
           "Expect aftershocks to follow the main shock of an earthquake. Be ready to Drop, Cover, and Hold On if you feel an aftershock.",
           "If you are in a damaged building, go outside and quickly move away from the building. Do not enter damaged buildings.",
@@ -131,7 +132,7 @@ export default function SafetyGuides() {
       <section className="mt-10 space-y-20">
         {/* Before */}
         <div id="before" className="mt-5">
-          <h2 className="font-semibold text-lg">Prepare Before an Emergency</h2>
+          <h2 className="font-semibold text-lg">Prepare Before an Earthquake</h2>
           <div className="flex items-center gap-3 mt-3">
             <img src={checklist} className="w-10 h-10" />
             <p className="text-sm font-semibold">The best time to prepare for any disaster is before it happens.</p>
@@ -164,7 +165,7 @@ export default function SafetyGuides() {
 
         {/* During */}
         <div id="during" className="mt-5">
-          <h2 className="font-semibold text-lg">Stay Safe During an Emergency</h2>
+          <h2 className="font-semibold text-lg">Stay Safe During an Earthquake</h2>
           <div className="flex items-center gap-3 mt-3">
             <img src={landslide} className="w-10 h-10" />
             <p className="text-sm font-semibold">If an earthquake happens, protect yourself right away.</p>
@@ -201,7 +202,7 @@ export default function SafetyGuides() {
 
         {/* After */}
         <div id="after" className="mt-5">
-          <h2 className="font-semibold text-lg">Stay Safe After an Emergency</h2>
+          <h2 className="font-semibold text-lg">Stay Safe After an Earthquake</h2>
           <div className="flex items-center gap-3 mt-3">
             <img src={caution} className="w-10 h-10" />
             <p className="text-sm font-semibold">
