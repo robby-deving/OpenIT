@@ -1,3 +1,4 @@
+//locations.controller.js
 const { supabase } = require ('../config/supabase.js');
 
 /**
