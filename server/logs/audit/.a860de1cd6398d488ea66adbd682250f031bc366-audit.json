@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "C:\\Users\\_VicenteBercasioII\\Documents\\Earthquake\\OpenIT\\server\\logs\\audit\\.a860de1cd6398d488ea66adbd682250f031bc366-audit.json",
+    "files": [
+        {
+            "date": 1762587939378,
+            "name": "C:\\Users\\_VicenteBercasioII\\Documents\\Earthquake\\OpenIT\\server\\logs\\audit\\08-11-2025-audit.log",
+            "hash": "21dd90bdaa012292e84c7e6ace82fc8cccdd9678059e2a1d6fe5499d473a09a8"
+        }
+    ],
+    "hashType": "sha256"
+}
