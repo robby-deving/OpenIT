@@ -14,7 +14,8 @@ import map from '@/assets/map.svg'
 import notif from '@/assets/notif.svg'
 import safetyguidelines from '@/assets/safetyguideline.svg'
 import masid from '@/assets/masid.svg'
-
+import hotlines from '@/assets/hotlines.svg'
+import news from '@/assets/news.svg'
 
 const data = {
   navMain: [
@@ -37,6 +38,16 @@ const data = {
       title: "Safety Tips",
       url: "safety-guides",
       icon: safetyguidelines
+    },
+      {
+      title: "Emergency Hotlines",
+      url: "emergency-hotlines",
+      icon: hotlines
+    },
+      {
+      title: "News",
+      url: "news",
+      icon: news
     },
     
   ],
