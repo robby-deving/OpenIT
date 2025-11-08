@@ -4,11 +4,11 @@ import copy from "@/assets/copy.svg";
 export default function EmergencyHotlines() {
   const hotlines = [
     { label: "All Emergencies (Nationwide)", number: "911" },
-    { label: "PNP (Police)", number: "117 / (02) 8722-0650" },
-    { label: "BFP (Fire/Rescue)", number: "(02) 8426-0219 / (02) 8426-0246" },
-    { label: "Disaster Response (NDRRMC/OCD)", number: "(02) 8911-5061" },
-    { label: "Philippine Red Cross", number: "143 / (02) 8527-8385" },
-    { label: "MMDA (Metro Manila)", number: "136" }
+    { label: "PNP (Police)", number: "0917 135 7907" },
+    { label: "BFP (Fire/Rescue)", number: "0920 960 6844" },
+    { label: "Disaster Response (NDRRMC/OCD)", number: "0998 546 9453" },
+    { label: "Philippine Red Cross", number: "0918 947 2018" },
+    { label: "MMDA (Metro Manila)", number: "0917 700 2950" }
   ];
 
   const handleCopy = (number: string) => {
