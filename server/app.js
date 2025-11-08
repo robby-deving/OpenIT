@@ -8,7 +8,6 @@ dotenv.config();
 
 const app = express();
 app.set('trust proxy', true);
-app.disable('x-powered-by');
 
 app.use(cors());
 app.use(express.json());
