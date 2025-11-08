@@ -8,6 +8,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
+  SidebarFooter
 } from "@/components/ui/sidebar"
 import dashboard from '@/assets/dashboard.svg'
 import map from '@/assets/map.svg'
@@ -56,12 +57,12 @@ const data = {
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props} >
-      <div className="bg-white">
+      <div className="bg-white h-full ">
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <img src={masid} alt="" />
+              <img src={masid}  alt="" />
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
@@ -69,6 +70,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarContent >
         <NavMain items={data.navMain} />
       </SidebarContent>
+        
       <SidebarRail />
       </div>
       
