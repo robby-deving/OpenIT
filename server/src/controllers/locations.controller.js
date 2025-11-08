@@ -1,9 +1,6 @@
 //locations.controller.js
 const { supabase } = require ('../config/supabase.js');
 
-/**
- * Get all locations
- */
 exports.getLocations = async (req, res) => {
   try {
     const { data, error } = await supabase
@@ -19,9 +16,6 @@ exports.getLocations = async (req, res) => {
   }
 };
 
-/**
- * Get a single location by ID
- */
 exports.getLocationById = async (req, res) => {
   const { id } = req.params;
 
@@ -45,9 +39,6 @@ exports.getLocationById = async (req, res) => {
   }
 };
 
-/**
- * Create a new location
- */
 exports.createLocation = async (req, res) => {
   const { name, latitude, longitude, category } = req.body;
 
@@ -71,9 +62,6 @@ exports.createLocation = async (req, res) => {
   }
 };
 
-/**
- * Update a location
- */
 exports.updateLocation = async (req, res) => {
   const { id } = req.params;
   const { name, latitude, longitude, category } = req.body;
@@ -105,9 +93,6 @@ exports.updateLocation = async (req, res) => {
   }
 };
 
-/**
- * Delete a location
- */
 exports.deleteLocation = async (req, res) => {
   const { id } = req.params;
 

@@ -1,9 +1,6 @@
 //locations.controller.js
 const { supabase } = require ('../config/supabase.js');
 
-/**
- * Get all locations
- */
 const getAllNotifications = async (req, res) => {
   try {
     const { data, error } = await supabase
@@ -23,9 +20,6 @@ const getAllNotifications = async (req, res) => {
   }
 };
 
-/**
- * Get Notification by Id
- */
 const getNotificationById = async (req, res) => {
   try {
     const { id } = req.params;
@@ -44,9 +38,6 @@ const getNotificationById = async (req, res) => {
   }
 };
 
-/**
- * Create a Notification
- */
 const createNotification = async (req, res) => {
   try {
     const { title, message, location, magnitude_threshold } = req.body;
@@ -67,9 +58,7 @@ const createNotification = async (req, res) => {
     res.status(500).json({ success: false, error: err.message });
   }
 };
-/**
- * Update Notification
- */
+
 const updateNotification = async (req, res) => {
   try {
     const { id } = req.params;
@@ -92,9 +81,7 @@ const updateNotification = async (req, res) => {
     res.status(500).json({ success: false, error: err.message });
   }
 };
-/**
- * Delete Notification
- */
+
 const deleteNotification = async (req, res) => {
   try {
     const { id } = req.params;
