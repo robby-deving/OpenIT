@@ -357,5 +357,6 @@ export default function SafetyGuides() {
         />
       </div>
     </div>
+  </div>
   );
 }
