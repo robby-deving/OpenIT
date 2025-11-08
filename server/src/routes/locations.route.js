@@ -9,11 +9,10 @@ const {
 
 const router = express.Router();
 
-// CRUD routes
-router.get('/', getLocations);          // GET all
-router.get('/:id', getLocationById);    // GET one
-router.post('/', createLocation);       // CREATE
-router.put('/:id', updateLocation);     // UPDATE
+router.get('/', getLocations);          
+router.get('/:id', getLocationById);    
+router.post('/', createLocation);       
+router.put('/:id', updateLocation);    
 router.delete('/:id', deleteLocation);  
 
 module.exports = router;
