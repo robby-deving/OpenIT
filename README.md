@@ -7,10 +7,11 @@ Masid: A Real-Time Earthquake Monitoring and Alert System is a disaster monitori
 
 ## Tech Stack
 
-- **Frontend:** React.js  
-- **Backend:** Node.js / Express  
-- **Database:** Supabase + PostgreSQL  
-- **API Testing / Documentation:** Postman  
+- **Frontend:** Typescript, Tailwind, shadcn for UI components
+- **Backend:** Node.js + Express.js 
+- **Database:** Supabase + PostgreSQL 
+- **API Testing / Documentation:** Postman
+- **Public Map API:** OpenStreetMap (OSM)
 
 ---
 
