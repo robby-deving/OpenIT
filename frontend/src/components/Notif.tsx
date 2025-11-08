@@ -1,29 +1,29 @@
-import { AppSidebar } from "@/components/app-sidebar"
-import {
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from "@/components/ui/sidebar"
-import { Outlet } from "react-router-dom"
-import Notif from "./components/Notif"
-import { useEffect,useState } from "react"
-import toast from "react-hot-toast"
+import React from 'react'
+import toast from 'react-hot-toast';
+
 import { createClient } from '@supabase/supabase-js';
 
-
-
-
-export default function Layout() {
-const supURL = "https://rnwlfsctdekawulfxcbk.supabase.co"
+export default function () {
+    const supURL = "https://rnwlfsctdekawulfxcbk.supabase.co"
 const supAnon ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJud2xmc2N0ZGVrYXd1bGZ4Y2JrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI1NzgxOTEsImV4cCI6MjA3ODE1NDE5MX0.NUZS3WSu9AhXx-OVQ8rFtBlUiaQYT83IAwEQQTvXPrY"
     const supabase = createClient(supURL, supAnon);
 
-  const [alert, setalert] = useState([]);
+    const [alert, setalert] = useState();
 
-  useEffect(()=>{
-    if(alert.length === 0) return
-
-    toast.custom((t) => (
+    const subscription = supabase
+      .channel('notifications') 
+      .on(
+        'postgres_changes',
+        { event: 'INSERT', schema: 'public', table: 'notifications' },
+        (payload) => {
+          
+                setalert(payload)
+        }
+      )
+      .subscribe();
+  return (
+    {
+        toast.custom((t) => (
   <div
     className={`${
       t.visible ? 'animate-custom-enter' : 'animate-custom-leave'
@@ -55,32 +55,6 @@ const supAnon ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJ
   </div>
 ))
 
-  },[alert])
-
-  const subscription = supabase
-      .channel('notifications') 
-      .on(
-        'postgres_changes',
-        { event: 'INSERT', schema: 'public', table: 'notifications' },
-        (payload) => {
-            const result = payload.new.json()
-                        console.log(result);
-
-              setalert(result)
-        }
-      )
-      .subscribe();
-    
-
-  return (
-    <SidebarProvider>
-      <AppSidebar />
-      <SidebarInset>
-        <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
-          <SidebarTrigger className="-ml-1" />
-        </header>
-        <Outlet/>
-      </SidebarInset>
-    </SidebarProvider>
+    }
   )
 }

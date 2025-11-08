@@ -1,74 +1,85 @@
-import React from "react";
-import recent from "@/assets/recent-alert.svg";
+
+import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 export default function Alerts() {
+
+  const [notif, setnotif] = useState([]);
+  const fetchNotif = async () =>{
+
+
+    const response = await fetch('http://localhost:3000/api/notifications')
+    console.log(response);
+
+
+    const result = await response.json()
+
+    console.log(result.data );
+    localStorage.setItem('notifs',JSON.stringify(result.data))
+
+    setnotif(result.data)
+    toast.success("Fetch Latest Data")
+
+
+  }
+
+  useEffect(()=>{
+    fetchNotif()
+
+    
+    if(notif.length === 0){
+          const offlinedata = localStorage.getItem('notifs')
+          setnotif(JSON.parse(offlinedata))
+    }
+  },[])
+
+  const formatDate = (dateString?: string) => {
+  if (!dateString) return "N/A";
+
+  const date = new Date(dateString);
+  return isNaN(date.getTime())
+    ? "N/A"
+    : new Intl.DateTimeFormat("en-PH", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true, 
+      }).format(date);
+};
+
   return (
     <div className="p-8">
       <h1 className="pb-5 font-bold text-2xl">Alerts</h1>
+    {notif.map((notif)=>(
+      <div className="w-full border-orange-400 border-3 rounded-xl bg-orange-50 p-4 mb-5 flex items-center gap-4">
+        <div className="h-20 w-[5rem] bg-red-400 rounded-full flex items-center justify-center">
+          <p className="text-white font-bold">{notif.magnitude_threshold}</p>
+          
+        </div>
 
-      <div className="w-full border-orange-400 border-4 rounded-xl bg-orange-50 p-4 mb-10 flex items-center gap-4">
-        <img
-          src={recent}
-          alt="Recent Alert"
-          className="h-24 w-24 object-contain"
-        />
-
-        <div className="flex flex-col">
-          <p className="text-red-600 font-bold text-2xl">
-            Earthquake Alert: M 4.8 Near Manila Bay
+        <div className="flex flex-1 flex-col">
+          <p className="text-red-500 font-bold text-2xl">
+            {notif.title}
           </p>
           <p className="font-medium text-sm">
-            📍 Manila Bay, Philippines
+            📍 {notif.location}
           </p>
           <p className="font-bold text-sm pt-1">
-            A magnitude 4.8 earthquake was detected near Manila Bay, Philippines
-            at 8:45 AM local time. Please follow safety protocols: Drop, Cover,
-            and Hold On. Check your surroundings for hazards and stay tuned for
-            updates.
+            {notif.message}
           </p>
           <div className="pt-1">
             <p className="text-gray-400 text-sm font-semibold">
-              Date Posted: November 8, 2025
-            </p>
-            <p className="text-gray-400 text-sm font-semibold">
-              Expires at: November 8, 2025
+              {formatDate(notif.created_at)}
             </p>
           </div>
         </div>
       </div>
+    ))}
+      
 
-      <h1 className="pb-5 font-bold text-2xl">Other Alerts</h1>
-      <div
-        className="inline-flex items-center gap-6 rounded-lg p-4 bg-white px-7 py-5"
-        style={{ boxShadow: "0 4px 12px 0 rgba(0, 0, 0, 0.15)" }}
-      >
-        {/* Circle */}
-        <div className="bg-orange-400 w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0">
-          <p className="text-white font-bold">M 6.8</p>
-        </div>
-
-        {/* Content */}
-        <div className="flex-1">
-          <p className="font-bold text-lg">
-            M 6.8 Near Manila Bay
-          </p>
-          <p className="font-medium text-sm">
-            📍 Manila Bay, Philippines
-          </p>
-          <p className="text-gray-700 text-sm mt-1">
-            A magnitude 4.8 earthquake was detected near Manila Bay, Philippines
-            at 8:45 AM local time. Please follow safety protocols: Drop, Cover,
-            and Hold On. Check your surroundings for hazards and stay tuned for
-            updates.
-          </p>
-          <p className="text-gray-500 text-xs mt-2">
-            Date Posted: Nov 8, 2025, 8:46 AM
-          </p>
-          <p className="text-gray-500 text-xs">
-            Expires At: Nov 8, 2025, 9:46 AM
-          </p>
-        </div>
-      </div>
+      
     </div>
   );
 }

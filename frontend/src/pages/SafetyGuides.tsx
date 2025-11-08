@@ -121,30 +121,31 @@ export default function SafetyGuides() {
   };
 
   return (
-    <div className="p-8">
+    <div className="flex justify-center">
+    <div className="p-8 flex flex-col max-w-5xl">
       <h1 className="pb-5 font-bold text-2xl">Safety Tips</h1>
 
       {/* Responsive Buttons */}
       <div className="flex flex-col gap-3 mb-5 sm:flex-row">
         <button
-          className="border border-blue-500 rounded-lg w-full sm:w-32"
+          className="border border-blue-500 hover:bg-blue-500 rounded-lg w-full sm:w-32"
           onClick={() => scrollTo("before")}
         >
-          <h3 className="p-1 text-center text-sm">Prepare Before</h3>
+          <h3 className="p-1 text-center text-sm font-semibold hover:text-white">Prepare Before</h3>
         </button>
 
         <button
-          className="border border-blue-500 rounded-lg w-full sm:w-32"
+          className="border border-blue-500 hover:bg-blue-500 rounded-lg w-full sm:w-32"
           onClick={() => scrollTo("during")}
         >
-          <h3 className="p-1 text-center text-sm">Stay Safe During</h3>
+          <h3 className="p-1 text-center text-sm font-semibold hover:text-white">Stay Safe During</h3>
         </button>
 
         <button
-          className="border border-blue-500 rounded-lg w-full sm:w-32"
+          className="border border-blue-500 hover:bg-blue-500 rounded-lg w-full sm:w-32"
           onClick={() => scrollTo("after")}
         >
-          <h3 className="p-1 text-center text-sm">Stay Safe After</h3>
+          <h3 className="p-1 text-center text-sm font-semibold hover:text-white">Stay Safe After</h3>
         </button>
       </div>
 
@@ -182,10 +183,10 @@ export default function SafetyGuides() {
 
             <div className="flex justify-end">
               <button
-                className="border-green-600 border w-28 h-8 flex items-center justify-center rounded-md mt-3"
+                className="bg-green-400 hover:bg-white hover:border-green-600 text-white hover:text-green-400 border w-28 h-8 flex items-center justify-center rounded-md mt-3"
                 onClick={() => handlePrepareClick("before")}
               >
-                <p className="text-xs font-bold">Prepare Now</p>
+                <p className="text-xs font-bold ">Prepare Now</p>
               </button>
             </div>
           </div>
@@ -228,10 +229,10 @@ export default function SafetyGuides() {
 
             <div className="flex justify-end">
               <button
-                className="border-green-600 border w-28 h-8 flex items-center justify-center rounded-md mt-3"
+                className="bg-green-400 hover:bg-white hover:border-green-600 text-white hover:text-green-400 border w-28 h-8 flex items-center justify-center rounded-md mt-3"
                 onClick={() => handlePrepareClick("during")}
               >
-                <p className="text-xs font-bold">Prepare Now</p>
+                <p className="text-xs font-bold ">Prepare Now</p>
               </button>
             </div>
           </div>
@@ -286,10 +287,10 @@ export default function SafetyGuides() {
 
             <div className="flex justify-end">
               <button
-                className="border-green-600 border w-28 h-8 flex items-center justify-center rounded-md mt-3"
+                className="bg-green-400 hover:bg-white hover:border-green-600 text-white hover:text-green-400 border w-28 h-8 flex items-center justify-center rounded-md mt-3"
                 onClick={() => handlePrepareClick("after")}
               >
-                <p className="text-xs font-bold">Prepare Now</p>
+                <p className="text-xs font-bold ">Prepare Now</p>
               </button>
             </div>
           </div>
@@ -303,5 +304,6 @@ export default function SafetyGuides() {
         onClose={() => setModalOpen(false)}
       />
     </div>
+  </div>
   );
 }
