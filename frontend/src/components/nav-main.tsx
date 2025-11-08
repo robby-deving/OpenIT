@@ -25,7 +25,7 @@ export function NavMain({
   }[]
 }) {
   return (
-    <SidebarGroup>
+    <SidebarGroup >
       <SidebarMenu>
         {items.map((item) => (
           <SidebarMenuButton className= "p-5 data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">

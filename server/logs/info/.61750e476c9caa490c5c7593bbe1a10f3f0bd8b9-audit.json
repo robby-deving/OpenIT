@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "C:\\projects\\openIT\\server\\logs\\info\\.61750e476c9caa490c5c7593bbe1a10f3f0bd8b9-audit.json",
+    "files": [
+        {
+            "date": 1762601989177,
+            "name": "C:\\projects\\openIT\\server\\logs\\info\\08-11-2025-info.log",
+            "hash": "9232d5e1c0f067c833dd3505649be63c521add72864c5f6c0e95381ec75147c3"
+        }
+    ],
+    "hashType": "sha256"
+}

@@ -13,6 +13,7 @@ import dashboard from '@/assets/dashboard.svg'
 import map from '@/assets/map.svg'
 import notif from '@/assets/notif.svg'
 import safetyguidelines from '@/assets/safetyguideline.svg'
+import masid from '@/assets/masid.svg'
 
 
 const data = {
@@ -43,20 +44,23 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar {...props}>
+    <Sidebar {...props} >
+      <div className="bg-white">
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              {/* logo here */}
+              <img src={masid} alt="" />
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
-      <SidebarContent>
+      <SidebarContent >
         <NavMain items={data.navMain} />
       </SidebarContent>
       <SidebarRail />
+      </div>
+      
     </Sidebar>
   )
 }
