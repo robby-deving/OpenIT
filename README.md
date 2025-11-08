@@ -1,6 +1,6 @@
 # Masid
 
-![Masid Logo](./src/assets/masid.svg)
+![Masid Logo](.frontend/src/assets/masid.svg)
 
 **Description:**  
 Masid: A Real-Time Earthquake Monitoring and Alert System is a disaster monitoring and alert system designed to provide real-time earthquake updates, safety tips, emergency hotlines, and news to enhance preparedness, awareness, and response. It offers a user-friendly dashboard, offline-ready safety guides, and a complete directory of emergency contacts.  
