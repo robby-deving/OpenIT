@@ -14,6 +14,40 @@ Masid: A Real-Time Earthquake Monitoring and Alert System is a disaster monitori
 
 ---
 
+## Features
+
+- **Dashboard:**  
+  Provides an instant overview of earthquake activity:  
+  - Total earthquakes by year  
+  - Total earthquakes by month  
+  - Most recent events with magnitude, location, and time  
+  - Interactive maps for quick visualization  
+
+- **Alerts:**  
+  Keeps users informed of earthquake events:  
+  - **Recent Alerts:** Latest significant earthquakes with magnitude, location, and timestamp  
+  - **Other Alerts:** Lower magnitude or older events for awareness and review  
+
+- **Safety Tips:**  
+  Guides users on preparedness and safety:  
+  - **Prepare Before:** Step-by-step guidance for disaster readiness  
+  - **Stay Safe During:** Safety instructions during earthquakes  
+  - **Stay Safe After:** Post-earthquake safety measures  
+  - Includes checklists, completion tracking, and simple gamification to encourage engagement  
+
+- **Emergency Hotlines:**  
+  Provides a directory of critical contacts:  
+  - Nationwide emergency numbers (e.g., 911)  
+  - Local PNP, Fire, Medical, and LGU contacts  
+  - One-tap copy feature for fast dialing  
+
+- **News:**  
+  Keeps users updated with verified information:  
+  - Latest earthquake-related news from trusted Philippine sources  
+  - Short summaries with “Read More” links  
+
+---
+
 ## API Endpoints
 
 ### Dashboard
